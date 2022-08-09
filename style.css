@@ -1,4 +1,9 @@
 /* بسم اللہ الرحمن الرحیم */
+/* some sonts */
+@font-face {
+    font-family: jameel noori nastaleeq;
+    src: url(./fonts/Jameel\ Noori\ Nastaleeq.ttf);
+  }
 
 *,html{
     margin: 0;
@@ -7,9 +12,11 @@
 
 }
 body{
+    position: relative;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
     font-family: jameel noori nastaleeq;
 }
 h1,a,li,p{
@@ -20,26 +27,29 @@ h1,a,li,p{
     text-decoration: none;
 
 }
+
 nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 2rem;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    display: grid;
+    grid-template-columns: 60% 1fr;
     height: auto;
+    z-index: 99;
+    padding: 20px 2rem;
+    transition: all 1s linear;
     
-}
-.nright{
-    width: 40%;
-    height: 100%;
     
 }
 
+
 .nright i{
-    font-size: 60px;
+    font-size: 30px;
+    cursor: pointer;
     right: 2;
     color: white;
     top: 0;
-    transform: rotate(90deg);
+    display: none;
 }
 
 .nleft img{
@@ -48,24 +58,39 @@ nav{
 }
 .nright ul{
     list-style: none;
-    display: flex;
-    direction:rtl ;
     width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 2rem;
 }
-.nright ul li{
-    margin-left: 2rem;
+.nright ul li a{
     font-size: 1.5rem;
+    transition: all 700ms linear;
 }
+.nright ul li a:hover {
+    border-bottom: 1px solid rgb(38, 238, 38);
+    color: rgb(38, 238, 38);
+}
+.nleft i:hover{
+    color: rgb(38, 238, 38);
+    transition: all 700ms linear;
+
+}
+
 .button{
-    transition: all 1s linear;
-    background-color: black;
-    padding: 0.4rem 4rem;
+    transition: all 700ms linear;
+    background-color:  rgba(233, 248, 242, 0.863);
+    color: black !important;
+    padding: 0.4rem 2rem;
     border-radius: 25px;
+    transition: all 600ms linear;
     
     
 }
+
 .button:hover{
-    background-color: rgb(56, 51, 51);
+    color: rgb(38, 238, 38) !important;
+    background-color: rgba(5, 3, 3,0.6);
 }
 /* end of navigation */
 /* start of hero */
@@ -90,7 +115,7 @@ nav{
     
 }
 .hero-inner p{
-    text-align: justify;
+    text-align: center;
     direction: rtl;
     font-size: 28px;
     margin-bottom: 40px;
@@ -101,7 +126,7 @@ nav{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
+    margin-top: 10vh;
 }
 .header{
     background-color:#1E2E3F;
@@ -113,11 +138,9 @@ nav{
     ;
 }
 .lap img{
-    position: absolute;
-    right: 0;
+    float: right;
     transform: (20deg,20deg);
-    
-    width: 700px;
+    width: 80%;
    
 }
 /* end of hero */
@@ -135,6 +158,9 @@ nav{
     text-align: justify;
     direction: rtl;
     font-weight: 700;
+}
+.taaruf button{
+    display: none;
 }
 /* end of taaruf */
 /* start of asbaq */
@@ -158,6 +184,7 @@ nav{
     width: 100%;
 }
 .sbqc{
+    transition: all 700ms linear;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -165,11 +192,20 @@ nav{
     padding: 20px;
     min-height: 500px;
     background-color: #fff;
+    border-radius: 5px;
     
 }
 .sbqc h1{
     color: red;
+    font-size: 2.5rem;
     
+}
+.sbqc ul{
+    width: 100%;
+    padding-left: 60px;
+}
+.sbqc .ulf{
+    padding-left: 80px;
 }
 .sbqc i{
     color: black;
@@ -186,3 +222,482 @@ nav{
     position: absolute;
     margin-top: 280px;
 }
+.sbqc img{
+    height: 150px;
+    color: red;
+}
+.sbqc:hover{
+    background-color: rgb(243, 151, 151);
+}
+.nav-back{
+    background-color: black;
+}
+/* end of asbaq */
+/* start of asatizah */
+.asatizah{
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.asatizah h1{
+    font-size: 3rem;
+    text-align: center;
+    color: black;
+
+}
+.slideshow{
+    display: grid;
+    grid-auto-flow: column;
+    width: 92%;
+    gap: 1rem;
+    scroll-behavior: smooth;
+    overflow: auto;
+    margin: auto;
+    
+}
+.slide{
+    width: 300px;
+    height: auto;
+    background-color: #fff;
+    padding: 70px 20px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFE-W98RM5cYfnuWZuU2ax7-YM2CdnLurMtg&usqp=CAU");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 5px;
+}
+.slide h1{
+    font-family: jameel noori nastaleeq ;
+    color: blue;
+    text-align: center;
+    font-size: 3rem;
+}
+.slide h4{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: blue;
+}
+.slide img{
+    border: 6px solid yellow;
+    border-radius: 100%;
+    width: 150px;
+}
+.slide button{
+    background-color: blue;
+    color: white;
+    padding: 8px 30px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+/* start styles for laptop and pc */
+::-webkit-scrollbar{
+    display: none;
+}
+/* start galery */
+
+.galery{
+    background-color: green;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.galery h1{
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+}
+.imggrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    gap: 1rem;
+    width: fit-content;
+    height: 100%;
+
+}
+.imggrid img{
+    border-radius: 5px;
+    width: 100%;
+}
+.imggrid a{
+    text-decoration: none;
+    font-size: 2rem;
+    border-radius: 5px;
+    background-color: rgba(158, 158, 59, 0.63);
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+/* end galery */
+/* start styles for rabitah */
+.contact{
+    padding: 30px;
+}
+.contact h1{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+.cform{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.cform input, .cform textarea{
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px 0;
+    font-size: 1rem;
+    padding-left: 20px;
+    font-weight: 700;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+.cform input:focus,.textArea:focus{
+    border: 4px solid gray;
+}
+.cform button{
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+.cform button:hover{
+    background-image: linear-gradient(to right ,rgb(150, 78, 78),rgb(146, 115, 115),rgb(221, 106, 106));
+}
+.textArea{
+    height: 30vh;
+    text-align: justify;
+    
+}
+
+
+/* end styles for rabitah */
+
+/* start footer */
+footer{
+    background-color: black;
+    width: 100%;
+    min-height: 30vh;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
+    gap: 1rem;
+    padding: 50px;
+}
+footer .contact{
+    padding: 0;
+    
+}
+footer .contact h1, footer .links h1{
+    text-align: left;
+    border-bottom: 3px solid white;
+    display: inline;
+
+}
+footer ul{
+    
+    margin-top: 20px;
+    list-style-type: none;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+footer ul li i{
+    margin-right: 11px;
+    font-size: 1.6rem;
+    
+    
+}
+footer ul li a{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+footer ul li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+}
+footer ul li a:hover{
+    color: gray;
+}
+
+footer img{
+    height: 33px;
+    margin-right: 8px;
+    
+    
+}
+.ci {
+    margin-left: 3px;
+}
+footer .other{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.other button{
+    display: block;
+    width: 100%;
+    padding: 10px 18px;
+    background-color: rgb(217, 209, 209);
+    border-radius: 25px;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.other button i{
+    margin-right: 1rem;
+}
+
+
+
+
+/* end footer */
+
+/* start styles for laptop and mid screens */
+
+@media only screen and (max-width: 1800px) {
+    nav{
+        grid-template-columns: 30% 1fr;
+    }
+    .nright a{
+        font-size: 1.3rem;
+    }
+   
+    .nright ul li{
+        font-size: 1rem;
+    }
+    .nleft img{
+        height: 30px;
+    }
+    .hero-inner h1{
+        font-size: 2rem;
+    }
+    .hero-inner p{
+        font-size: 1rem;
+    }
+    .hero-inner a{
+        font-size: 1.3rem;
+    }
+    .taaruf h1{
+        font-size: 2rem;
+    }
+    .taaruf p{
+        font-size: 1rem;
+    }
+    .asbaq-container h1{
+        font-size: 2rem;
+    }
+    .asbaq{
+        grid-template-columns: 1fr 1fr;
+        padding: 60px 40px;
+        gap: 20px;
+    }
+    .asbaq .ulf, .java{
+        position: relative;
+        margin: 0px;
+    
+        
+    }
+    .sbqc ul{
+        width: 100%;
+        padding-left: 40px;
+        
+    }
+    .slideshow{
+        width: 94%;
+    }
+   
+}
+
+/* end styles for laptop and pc */
+/* start of media query, these tsyles for mobile if the screen width is 944 or less */
+@media only screen and (max-width: 944px) {
+    nav{
+        grid-template-columns: 1fr;
+        padding: 0px 0px !important;
+    }
+    
+
+ 
+    .nright ul{
+        flex-direction: column;
+        width: 100%;
+        
+        
+    }
+    .nright ul li a{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+   
+    .nright  ul {
+        gap: 0.6rem;
+    }
+    .nright .button{
+        padding: 10px 0px;
+        text-align: center;
+    }
+    
+    #nright {
+        display: none;
+        background-color: rgb(36, 33, 33);
+        padding: 40px;
+    }
+    .nleft i{
+        display: block;
+    }
+    .nleft{
+        display: flex;
+        margin: 0;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 20px;
+    }
+    .hero-inner{
+        margin: 0;
+    }
+    .hero-inner h1,.hero-inner p{
+        font-size: 10px;
+    }
+    nav{
+        padding: 20px 20px;
+    }
+    .nleft img{
+        height: 27px;
+        
+    }
+    .nright{
+        display: block;
+        
+    }
+    .nleft i{
+        cursor: pointer;
+        color: white;
+        font-size: 25px;
+        font-weight: 300;
+        
+    }
+    .hero img{
+        display: none;
+    }
+    .hero{
+        padding: 0;
+        display: block;
+    }
+    
+    .hero-inner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 0px 20px;
+    }
+    .hero-inner h1{
+        font-size: 23px;
+        text-align: center;
+    }
+    .hero-inner p{
+        font-size: 15px;
+    }
+    .hero-inner .button{
+        font-size: 20px;
+    }
+    /* end of header styles for mobile */
+    /* start of taaruf styles for mobile */
+    .taaruf h1{
+        font-size: 2rem;
+    }
+    .taaruf p{
+        font-size: 1rem;
+        height: 190px;
+        padding-bottom: 10px;
+        overflow: hidden;
+    }
+    .taaruf button{
+        color: white;
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+    }
+    /* end of taaruf styles for mobile */
+    /* start of asbaq styles for mobile */
+    .asbaq-container h1{
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    .asbaq{
+        padding: 0;
+        padding-bottom: 40px;
+        row-gap: 20px;
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+    .asbaq .ulf, .java{
+        position: relative;
+        margin: 0px;
+    
+        
+    }
+    .sbqc{
+        padding: 30px 0px;
+        width: 90%;
+    }
+    .sbqc h1{
+        font-size: 1.6rem;
+    }
+    .sbqc ul li{
+        font-size: 1rem;
+        
+    }
+    .sbqc UL{
+        width: 100%;
+        padding: 40px;
+        
+    }
+    .slideshow{
+        width: 98%;
+    }
+   
+    
+}
+/* end of styles for mobile */
+/* start of styles for mobile landscape */
+@media (orientation: landscape) and (max-width: 944px) {
+    .hero{
+        height: 130vh;
+    }
+
+}
+    

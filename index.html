@@ -3,8 +3,10 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <!-- font aawesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
@@ -18,17 +20,22 @@
         <!--- header section is starting -->
         <header class="header">
             <!-- start of the navigation -->
-            <nav>
+            <nav id="navbar">
                 <div class="nleft">
-                    <img src="logo.png" alt="logo">
+                    <img src="./ast/logo.png" alt="logo">
+                    <i class="fa fa-bars" id="menu-toggle"></i>
+
                 </div>
-                <div class="nright">
+                <div class="nright" id="nright">
                     <ul class="navul">
+
                         
-                        <li><a class="button" href="#">لاگ این</a></li>
                         <li><a href="#">ہوم</a></li>
                         <li><a href="#">تعارف</a></li>
                         <li><a href="#">اسباق و مضامین</a></li>
+                        <li><a href="#">اساتذہ کا تعارف</a></li>
+                        <li><a href="#">گیلری</a></li>
+                        <a class="button" href="#">لاگ ان</a>
                     </ul>
                     
                 </div>
@@ -40,9 +47,9 @@
                     <h1>سال 2022 کے لیے نئے داخلے بند کیے جا چکے ہیں۔ اگلے سال کے لیے داخلوں کا اعلان اسی ویب سائٹ پر
                         کیا جائے گا۔
                     </h1>
-                    <p> برائے مہر بانی نوٹ فرمالیں یہ کورس صرف علماءکرام کے کلے خاص ہے،جن حضرات کے پاس شہادۃ العالمیہ کی
+                    <p> برائے مہر بانی نوٹ فرمالیں یہ کورس صرف علماءکرام کے لیے خاص ہے،جن حضرات کے پاس شہادۃ العالمیہ کی
                         سند ہے وہی حضرات اس کورس میں حصہ لے سکتے ہیں۔کسی ہھی مکتبہ فکر سے تعلق رکھنے والے حضرات اس کورس
-                        کے لیے اپلائے کر سکتے ہیں۔اس کعرس میں کوئی ہھی کسی قسم کی فیس نہیں ہے ،یہ بالکل مفت ہے۔</p>
+                        کے لیے اپلائے کر سکتے ہیں۔اس کورس میں کوئی ہھی کسی قسم کی فیس نہیں ہے ،یہ بالکل مفت ہے۔</p>
 
                     <a class="button" href="#">رجسٹرکریں</a>
                 </div>
@@ -55,67 +62,236 @@
         <!-- end of header -->
         <!-- start of taaruf section -->
         <div class="taaruf">
-           <h1>تعارف</h1>
-           <p>مدارس کے اعدادوشمار کے حوالے سے، پاکستان میں مذہبی تعلیم کی صورتحال کچھ یوں ہے کہ تقریباً 35 لاکھ طلباء پاکستان کے 35 ہزار مدارس میں داخلہ لیتے ہیں۔ مختصراً ہم سب جانتے ہیں کہ مدرسے کے طالب علم کے بارے میں لوگوں کے ذہن میں یہ خاکہ ابھرتا ہے ایک ناقابل برداشت، جاہل، فرقہ واریت میں ڈوبا داڑھی والا نوجوان جو اپنے اور اپنے اردگرد کے لوگوں کو دھماکے سے اڑا دینے پر کمربستہ ہے۔ یہ تصور کیونکر پیدا ہوا یہ ہمارے تعارف کا موضوع نہیں ہے بلکہ سوال یہ ہے کہ ہم اس صورتحال میں کیا کر سکتے ہیں؟ ہم (یونیورسٹی کے اساتذہ) نے ان طالب علموں کے دماغ کو پاکستان کی بہتری کے لیے استعمال کرنے کا ارادہ کیا ہے۔ اس مقصد کے لیے ہم نے ایک سالہ کمپیوٹر سافٹ وئیر کا پروگرام ترتیب دیا ہے، جس میں ایک سال کے اندر سافٹ ویئر بنانے سے متعلق ایک اچھا خاصہ مواد رکھا گیا ہے جسے پڑھنے کے بعد یہ طالب علم سافٹ ویئر انڈسٹری کے لیے کار آمد ثابت ہو سکتے ہیں، اس پروگرام سے ممکنہ اغراض یہ ہیں:
+            <h1>تعارف</h1>
+            <p>مدارس کے اعدادوشمار کے حوالے سے، پاکستان میں مذہبی تعلیم کی صورتحال کچھ یوں ہے کہ تقریباً 35 لاکھ طلباء
+                پاکستان کے 35 ہزار مدارس میں داخلہ لیتے ہیں۔ مختصراً ہم سب جانتے ہیں کہ مدرسے کے طالب علم کے بارے میں
+                لوگوں کے ذہن میں یہ خاکہ ابھرتا ہے ایک ناقابل برداشت، جاہل، فرقہ واریت میں ڈوبا داڑھی والا نوجوان جو
+                اپنے اور اپنے اردگرد کے لوگوں کو دھماکے سے اڑا دینے پر کمربستہ ہے۔ یہ تصور کیونکر پیدا ہوا یہ ہمارے
+                تعارف کا موضوع نہیں ہے بلکہ سوال یہ ہے کہ ہم اس صورتحال میں کیا کر سکتے ہیں؟ ہم (یونیورسٹی کے اساتذہ) نے
+                ان طالب علموں کے دماغ کو پاکستان کی بہتری کے لیے استعمال کرنے کا ارادہ کیا ہے۔ اس مقصد کے لیے ہم نے ایک
+                سالہ کمپیوٹر سافٹ وئیر کا پروگرام ترتیب دیا ہے، جس میں ایک سال کے اندر سافٹ ویئر بنانے سے متعلق ایک اچھا
+                خاصہ مواد رکھا گیا ہے جسے پڑھنے کے بعد یہ طالب علم سافٹ ویئر انڈسٹری کے لیے کار آمد ثابت ہو سکتے ہیں، اس
+                پروگرام سے ممکنہ اغراض یہ ہیں:
 
-            مدرسے کے طالب علموں کو معاشی طور پر مستحکم کرنا تاکہ وہ مساجد کی انتظامیہ کے رحم و کرم سے باہر نکلیں اور دین کی بات بغیر کسی معاشی دباؤ کے کر سکیں۔
-            مدرسے کے طلباء کو آئی ٹی کی مضبوط بنیاد مہیا کرنا، پرنٹنگ پریس کی ایجاد سے قبل قرآن کے نسخے ہاتھوں سے لکھے جاتے تھے، اب یہ عجائب گھروں میں ملتے ہیں اور ہر خاص و عام چھپے ہوئے قرآن سے ہی استفادہ کرتاہے، یہ صورتحال تیزی سے مزید بدل رہی ہے اور آئندہ لوگ قرآن موبائل فون اور ٹیبلیٹس پر پڑھیں گے۔ ہمارے علماء کو جدید ٹیکنالوجی سے فہم حاصل کرنا چاہیے تاکہ وہ قرآن اور حدیث کی ترویج و ترقی میں مثبت طریقے سے حصہ ڈال سکیں۔
-            سوشل میڈیا کا آج کے معاشرے میں جو کردار ہے اس سے ہر کوئی واقف ہے۔ ہمارے علماء کو سوشل میڈیا کا فقط استعمال نہیں آنا چاہیے بلکہ انہیں سوشل میڈیا کی ایجاد کو موثر ترویج دینے میں اپنا کردار ادا کرنا چاہیے۔
+                مدرسے کے طالب علموں کو معاشی طور پر مستحکم کرنا تاکہ وہ مساجد کی انتظامیہ کے رحم و کرم سے باہر نکلیں اور
+                دین کی بات بغیر کسی معاشی دباؤ کے کر سکیں۔
+                مدرسے کے طلباء کو آئی ٹی کی مضبوط بنیاد مہیا کرنا، پرنٹنگ پریس کی ایجاد سے قبل قرآن کے نسخے ہاتھوں سے
+                لکھے جاتے تھے، اب یہ عجائب گھروں میں ملتے ہیں اور ہر خاص و عام چھپے ہوئے قرآن سے ہی استفادہ کرتاہے، یہ
+                صورتحال تیزی سے مزید بدل رہی ہے اور آئندہ لوگ قرآن موبائل فون اور ٹیبلیٹس پر پڑھیں گے۔ ہمارے علماء کو
+                جدید ٹیکنالوجی سے فہم حاصل کرنا چاہیے تاکہ وہ قرآن اور حدیث کی ترویج و ترقی میں مثبت طریقے سے حصہ ڈال
+                سکیں۔
+                سوشل میڈیا کا آج کے معاشرے میں جو کردار ہے اس سے ہر کوئی واقف ہے۔ ہمارے علماء کو سوشل میڈیا کا فقط
+                استعمال نہیں آنا چاہیے بلکہ انہیں سوشل میڈیا کی ایجاد کو موثر ترویج دینے میں اپنا کردار ادا کرنا چاہیے۔
             </p>
-           <
+            <button class="button">Read More</button>
+
         </div>
         <!-- end of taaruf -->
         <!-- start of asbaq section -->
-       <div class="asbaq-container">
-        <h1>اسباق ومضامین</h1>
-        <div class="asbaq">
-            <div class="sbqc">
-                <i class="fa fa-code"></i>
-                <h1>Web development</h1>
-                <ul>
-                    <li>Web pages: static & dynamic</li>
-                    <li>HTML, CSS, JS, DOM, & PHP</li>
-                    <li>Session & Cookie</li>
-                    <li>PHP & Database Development</li>
-                    <li>Dynamic & Interactive Web Development</li>
-                    <li>Web Development using Wordpress</li>
-                </ul>
-            </div>
-            <div class="sbqc">
-                <img src="./java.jpg" alt="">    
-                <h1 class="java">JAVA Object Oriented</h1>
-                <ul class="ulf">
-<li>Complete java and OOP Concepts</li>
-<li>Method Overloding</li>
-<li>Encapsulation</li>
-<li>Abstraction</li>
-<li>Inheritance</li>
-<li>Polymorphism</li>
-<li>Multiple Threading</li>
-    
-                </ul>
-                
-            </div>
-            <div class="sbqc">
-                <i class="fa fa-database"></i>
-                <h1>Database development</h1>
-                <ul>
-                    <li>Introduction to Databases</li>
-                    <li>Advantages and Disadvantages of Database</li>
-                    <li>Database Systems-Architecture</li>
-                    <li>User types</li>
-                    <li>Conceptual modeling</li>
-                    <li>SQL - DDL, DML, & DCL -ER and EER Models</li>
-                </ul>
-            </div>
-            <div class="sbqc">
-                <i class="fa fa-android"></i>
-                <H1>Mobile app development</H1>
-                
+        <div class="asbaq-container">
+            <h1>اسباق ومضامین</h1>
+            <div class="asbaq">
+                <div class="sbqc">
+                    <i class="fa fa-code"></i>
+                    <h1>Web development</h1>
+                    <ul>
+                        <li>Web pages: static & dynamic</li>
+                        <li>HTML, CSS, JS, DOM, & PHP</li>
+                        <li>Session & Cookie</li>
+                        <li>PHP & Database Development</li>
+                        <li>Dynamic & Interactive Web Development</li>
+                        <li>Web Development using Wordpress</li>
+                    </ul>
+
+                </div>
+                <div class="sbqc">
+                    <img src="./ast/java.png" alt="">
+                    <h1 >JAVA Object Oriented</h1>
+                    <ul>
+                        <li>Complete java and OOP Concepts</li>
+                        <li>Method Overloding</li>
+                        <li>Encapsulation</li>
+                        <li>Abstraction</li>
+                        <li>Inheritance</li>
+                        <li>Polymorphism</li>
+                        <li>Multiple Threading</li>
+
+                    </ul>
+
+                </div>
+                <div class="sbqc">
+                    <i class="fa fa-database"></i>
+                    <h1>Database development</h1>
+                    <ul>
+                        <li>Introduction to Databases</li>
+                        <li>Advantages and Disadvantages of Database</li>
+                        <li>Database Systems-Architecture</li>
+                        <li>User types</li>
+                        <li>Conceptual modeling</li>
+                        <li>SQL - DDL, DML, & DCL -ER and EER Models</li>
+                    </ul>
+                </div>
+                <div class="sbqc">
+                    <i class="fa-brands fa-android"></i>
+                    <H1>Mobile app development</H1>
+                    <ul>
+                        <li>Introduction to Android Platform (An overview)</li>
+                        <li>Views Hierarchy in Android</li>
+                        <li>XML based Custom View definition using Built-in Views</li>
+                        <li>Android Resource Framework</li>
+                        <li>Dynamic Views using Data Adapters</li>
+                        <li>Handling Screen Rotation and Multiple screen sizes</li>
+                    </ul>
+
+                </div>
             </div>
         </div>
+        <!-- end of asbaq section -->
+        <!-- start of asatizah section -->
+        <div class="asatizah">
+            <h1>اساتذہ کا تعارف</h1>
+            <div class="slideshow">
+                <div class="slide">
+                    <img src="http://www.isdp.info/images/faculty/3.jpeg" alt="">
+                    <h1>ندیم غفور چودری</h1>
+                    <h4>Assistant Professor
+                        CIIT Department of Computer Science
+                        </h4>
+                        <button>Profile</button>
+        
+                </div>
+                <div class="slide">
+                    <img src="http://www.isdp.info/images/faculty/2.jpeg" alt="">
+                    <h1>
+                        عبد المتین
+                    </h1>
+                    <h4>
+                        Lecturer Punjab University
+                        PUCIT Department of Computer Science
+                        </h4>
+                        <button>Profile</button>
+        
+                </div>
+                <div class="slide">
+                    <img src="http://www.isdp.info/images/faculty/1.png" alt="">
+                    <h1>
+                        مولانا حق نواز
+                    </h1>
+                    <h4>
+                        MSCS Schollar UCP
+                        Intensive Software Develoment Program
+                        </h4>
+                        <button>Profile</button>
+        
+                </div>
+                <div class="slide">
+                    <img src="http://www.isdp.info/images/faculty/5.jpg" alt="">
+                    <h1>
+                        عبد القیوم
+                    </h1>
+                    <h4>
+                        Sr. English Teacher
+                        CEO & Trainer at "Training Wizards"
+                        </h4>
+                        <button>Profile</button>
+        
+                </div>
+                <div class="slide">
+                    <img src="http://www.isdp.info/images/faculty/Dr_Faizan_Ahmad.png" alt="">
+                    <h1>
+                        ڈاکٹر فیضان احمد
+                    </h1>
+                    <h4>
+                        Assistant Professor
+        CIIT Department of Computer Science
+                        </h4>
+                        <button>Profile</button>
+        
+                </div>
+                <div class="slide">
+                    <img src="http://www.isdp.info/images/faculty/Aksam_Iftikhar.png" alt="">
+                    <h1>
+                        ڈاکٹر اکثم افتخار
+                    </h1>
+                    <h4>
+                        Assistant Professor
+        CIIT Department of Computer Science
+                        </h4>
+                        <button>Profile</button>
+        
+                </div>
+                <div class="slide">
+                    <img src="http://www.isdp.info/images/faculty/Ahmad_Ali.png" alt="">
+                    <h1>
+                        ڈاکٹر احمد علی بادات
+                    </h1>
+                    <h4>
+                        Lecturer
+                        Govt. College of Science, Lahore
+                        </h4>
+                        <button>Profile</button>
+        
+                </div>
+            </div>
         </div>
+        <!-- asatizah section -->
+        <!-- start galery section -->
+        <div class="galery">
+            <h1>گیلری</h1>
+           <div class="imggrid">
+            <img src="http://www.isdp.info/images/test/test2022/5.png" alt="">
+            <img src="http://www.isdp.info/images/test/test2022/4.png" alt="">
+            <img src="http://www.isdp.info/images/test/test2022/3.png" alt="">
+            <img src="http://www.isdp.info/images/test/test2022/2.png" alt="">
+            <img src="http://www.isdp.info/images/test/test2022/1.png" alt="">
+            <a href="#" class="button">See More</a>
+            </div>
+        </div>
+
+        <!-- end galery section -->
+        <!-- start contact form -->
+        <div class="contact">
+            <h1>رابطہ</h1>
+            <form action="" class="cform">
+                
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email">
+                <textarea class="textArea" placeholder=" what you want to say?"></textarea> 
+                <button type="submit"> Send</button>
+            </form>
+        </div>
+        <!-- end contact form -->
+        <!-- start footer -->
+        <footer>
+            <div class="contact">
+                <h1>Contact Details</h1>
+                <ul>
+                    <li><i class="fa-brands fa-facebook-square"></i><a href="https://www.facebook.com/ISDPPakistan">Facebook</a></li>
+                    <li><i class="fa fa-envelope"></i><a href="mailto: ngchaudhry@gmail.com">ngchaudhry@gmail.com</a></li>
+                    <li><i class="fa fa-phone-square"></i><a href="tel:+923102599762">+92 310 2599 762</a></li>
+                    <li><i class="fa fa-phone-square"></i><a href="tel:+923004099919">+92 300 4099 919</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <h1>Other important links</h1>
+                <ul>
+                    <li><i class="fa-solid fa-user-group"></i><a href="#"></i>Previous Students</a></li>
+                    <li>
+
+                        <img src="./icons/352375_folder_open_icon (1).png" alt=""><a href="#"> Recent Projects</a></li>
+                        <li><i class="fa-solid fa-circle-info ci"></i><a href="#">Admission info</a></li>
+                        <li><i class="fa-solid fa-circle-question ci"></i><a href="#">Get Some help</a></li>
+
+                </ul>
+            </div>
+            <div class="other">
+                <button class="fatawah"><i class="fa-solid fa-book-open-reader"></i>Online Fatawah</button>
+                <button class="location"><i class="fa-solid fa-location-dot"></i>See Our Location</button>
+            </div>
+        </footer>
+        <!-- end footer -->
     </div>
+    <script src="./script/jqanimation.js"></script>
 </body>
 
 </html>
